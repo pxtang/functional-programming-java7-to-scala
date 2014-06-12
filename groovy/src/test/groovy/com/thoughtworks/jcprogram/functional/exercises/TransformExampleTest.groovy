@@ -1,4 +1,4 @@
-package com.thoughtworks.jcprogram.functional.examples
+package com.thoughtworks.jcprogram.functional.exercises
 
 import org.junit.Test
 
