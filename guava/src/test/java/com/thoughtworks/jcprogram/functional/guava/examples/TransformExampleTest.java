@@ -1,37 +1,32 @@
 package com.thoughtworks.jcprogram.functional.guava.examples;
 
+import com.google.common.base.Function;
 import org.junit.Test;
 
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
+import static com.google.common.collect.Lists.transform;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class TransformExampleTest {
+    private static class DivideFunction implements Function<Integer, Integer> {
+        private int numberToDivideBy;
 
-    @Test
-    public void shouldGetOneWhenDividingANumberByItself(){
-        Integer numberToDivideBy = 3;
-        TransformExample numberDivider = new TransformExample(numberToDivideBy);
-        List<Integer> expected = newArrayList(1);
-        assertThat(numberDivider.divide(newArrayList(3)), is(expected));
-    }
+        public DivideFunction(int numberToDivideBy) {
+            this.numberToDivideBy = numberToDivideBy;
+        }
 
-    @Test
-    public void shouldTruncateAnyRemainderFromDivision(){
-        Integer numberToDivideBy = 4;
-        TransformExample numberDivider = new TransformExample(numberToDivideBy);
-        List<Integer> expected = newArrayList(0);
-        assertThat(numberDivider.divide(newArrayList(3)), is(expected));
+        public Integer apply(Integer integer) {
+            return integer/numberToDivideBy;
+        }
     }
 
     @Test
     public void shouldDivideMoreThanOneNumber(){
-        Integer numberToDivideBy = 3;
-        TransformExample numberDivider = new TransformExample(numberToDivideBy);
-        List<Integer> expected = newArrayList(1, 2, 3);
-        assertThat(numberDivider.divide(newArrayList(3, 6, 9)), is(expected));
+        List<Integer> result = transform(newArrayList(3, 6, 9), new DivideFunction(3));
+        assertThat(result, is(newArrayList(1, 2, 3)));
     }
 
 }

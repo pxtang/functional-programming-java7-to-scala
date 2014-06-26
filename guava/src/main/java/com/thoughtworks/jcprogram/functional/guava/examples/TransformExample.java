@@ -14,10 +14,12 @@ public class TransformExample {
     }
 
     public List<Integer> divide(List<Integer> numbersToDivide) {
-        return transform(numbersToDivide, new Function<Integer, Integer>() {
-            public Integer apply(Integer integer) {
-                return integer/numberToDivideBy;
-            }
-        });
+        return transform(numbersToDivide, new IntegerIntegerFunction());
+    }
+
+    private class IntegerIntegerFunction implements Function<Integer, Integer> {
+        public Integer apply(Integer integer) {
+            return integer/numberToDivideBy;
+        }
     }
 }

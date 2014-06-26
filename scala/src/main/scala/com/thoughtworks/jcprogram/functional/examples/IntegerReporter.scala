@@ -1,4 +1,4 @@
-package com.thoughtworks.jcprogram.functional.exercises
+package com.thoughtworks.jcprogram.functional.examples
 
 // Given a list of numbers like {1, 9, 4, 16, 4}
 // Print the square root of all of the numbers larger than 4.

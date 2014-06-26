@@ -12,10 +12,9 @@ public class TransformExample {
     }
 
     public List<Integer> divide(List<Integer> numbersToDivide) {
-        Function<Integer,Integer> divideByNumberFunction = integer -> integer / numberToDivideBy;
         return numbersToDivide
                 .stream()
-                .map(divideByNumberFunction)
+                .map(integer -> integer / numberToDivideBy)
                 .collect(Collectors.<Integer>toList());
     }
 }
