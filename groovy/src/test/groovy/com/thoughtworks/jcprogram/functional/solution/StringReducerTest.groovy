@@ -16,17 +16,12 @@ class StringReducerTest {
     }
 
     @Test
-    void shouldReduceToFirstLetterWhenStringIsLength4() {
-        assertThat reducer.reduceToFirstLetterOfLengthFourStrings(["1234"]), is("1");
+    void shouldReduceStrings() {
+        assertThat reducer.reduceToFirstLetterOfLengthFourStrings(["1234", "2345"]), is("12");
     }
 
     @Test
     void shouldReduceToNothingWhenStringIsNotLength4() {
         assertThat reducer.reduceToFirstLetterOfLengthFourStrings(["12345"]), is("");
-    }
-
-    @Test
-    void shouldReduceMoreThanOneString() {
-        assertThat reducer.reduceToFirstLetterOfLengthFourStrings(["1234", "2345"]), is("12");
     }
 }

@@ -4,6 +4,8 @@ import org.junit.Before
 import org.junit.Ignore
 import org.junit.Test
 
+import static org.hamcrest.CoreMatchers.both
+import static org.hamcrest.CoreMatchers.containsString
 import static org.hamcrest.CoreMatchers.is
 import static org.junit.Assert.assertThat
 
@@ -17,19 +19,21 @@ class IntegerReporterTest {
 
     @Ignore
     @Test
-    def void shouldReportSquareRootWhenThereIsOneNumberAndItIsGreaterThan4() {
-        assertThat reporter.reportSquareRootsOfLargeNumbers([9]), is("3");
+    def void shouldTakeSquareRootOfNumbers() {
+        def result = reporter.reportSquareRootsOfLargeNumbers([9, 16])
+        assertThat result, both(containsString("3")).and(containsString("4"))
     }
 
     @Ignore
     @Test
     def void shouldReportNothingWhenThereIsOneNumberAndItIsLessThan4() {
-        assertThat reporter.reportSquareRootsOfLargeNumbers([3]), is("");
+        assertThat reporter.reportSquareRootsOfLargeNumbers([3]), is("")
     }
 
     @Ignore
     @Test
-    def void shouldReportWhenThereIsMoreThanOneNumber() {
-        assertThat reporter.reportSquareRootsOfLargeNumbers([9, 16]), is("3, 4");
+    def void shouldInsertCommaAndSpaceBetweenNumbers() {
+        assertThat reporter.reportSquareRootsOfLargeNumbers([9, 9]), is("3, 3")
     }
+
 }

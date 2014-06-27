@@ -1,4 +1,4 @@
-package com.thoughtworks.jcprogram.functional.guava.exercise;
+package com.thoughtworks.jcprogram.functional.exercise;
 
 import org.junit.Before;
 import org.junit.Ignore;

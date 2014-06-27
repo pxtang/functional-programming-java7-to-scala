@@ -1,8 +1,8 @@
-package com.thoughtworks.jcprogram.functional.guava.exercise;
+package com.thoughtworks.jcprogram.functional.exercise;
 
 import java.util.List;
 
-import static com.google.common.collect.Lists.newArrayList;
+import static java.util.Arrays.asList;
 
 // Given a list of numbers like {1, 9, 4, 16, 4}
 // Print the square root of all of the numbers larger than 4.
@@ -10,7 +10,7 @@ import static com.google.common.collect.Lists.newArrayList;
 
 public class IntegerReporter {
     public static void main(String[] args) {
-        List<Integer> numbers = newArrayList(1, 9, 4, 16, 4);
+        List<Integer> numbers = asList(1, 9, 4, 16, 4);
 
         System.out.println(new IntegerReporter().reportSquareRootsOfLargeNumbers(numbers));
 
