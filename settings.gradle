@@ -1,3 +1,3 @@
 rootProject.name = 'functional-programming-java7-to-scala'
-include 'groovy', 'guava', 'java7', 'scala'//, 'java8'
+include 'groovy', 'guava', 'java7'//, 'java8'
 
