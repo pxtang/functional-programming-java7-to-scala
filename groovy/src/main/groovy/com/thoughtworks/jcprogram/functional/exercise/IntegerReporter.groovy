@@ -6,6 +6,7 @@ package com.thoughtworks.jcprogram.functional.exercise
 
 List numbers = [1, 9, 4, 16, 4]
 
+println("------------ Groovy: IntegerReporter ------------")
 println new IntegerReporter().reportSquareRootsOfLargeNumbers(numbers)
 
 def reportSquareRootsOfLargeNumbers(numbers){

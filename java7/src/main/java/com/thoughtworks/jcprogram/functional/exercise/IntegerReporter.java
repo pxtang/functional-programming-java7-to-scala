@@ -1,6 +1,5 @@
 package com.thoughtworks.jcprogram.functional.exercise;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -13,6 +12,7 @@ public class IntegerReporter {
     public static void main(String[] args) {
         List<Integer> numbers = asList(1, 9, 4, 16, 4);
 
+        System.out.println("------------ Java 7: IntegerReporter ------------");
         System.out.println(new IntegerReporter().reportSquareRootsOfLargeNumbers(numbers));
 
     }

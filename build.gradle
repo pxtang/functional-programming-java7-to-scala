@@ -1,5 +1,13 @@
+apply plugin: 'idea'
+
 version = '1.0'
 
+idea {
+    project {
+        jdkName = '1.8'
+        languageLevel = '1.8'
+    }
+}
 
 repositories {
     mavenCentral()

@@ -12,6 +12,8 @@ public class StringReducer {
 
     public static void main(String[] args) {
         List<String> strings = newArrayList("Bill", "Archer", "Lana");
+
+        System.out.println("------------ Guava: StringReducer ------------");
         System.out.println(new StringReducer().reduceToFirstLetterOfLengthFourStrings(strings));
     }
 

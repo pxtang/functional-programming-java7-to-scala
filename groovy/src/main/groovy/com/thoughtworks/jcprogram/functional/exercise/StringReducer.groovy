@@ -5,6 +5,8 @@ package com.thoughtworks.jcprogram.functional.exercise
 // For example, "BL"
 
 Set strings = ["Bill", "Archer", "Lana"]
+
+println("------------ Groovy: StringReducer ------------")
 println new StringReducer().reduceToFirstLetterOfLengthFourStrings(strings)
 
 

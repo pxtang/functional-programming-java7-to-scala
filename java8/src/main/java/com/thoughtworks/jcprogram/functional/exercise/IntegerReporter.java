@@ -12,8 +12,8 @@ public class IntegerReporter {
     public static void main(String[] args) {
         List<Integer> numbers = asList(1, 9, 4, 16, 4);
 
+        System.out.println("------------ Java 8: IntegerReporter ------------");
         System.out.println(new IntegerReporter().reportSquareRootsOfLargeNumbers(numbers));
-
     }
 
     public String reportSquareRootsOfLargeNumbers(List<Integer> numbers) {

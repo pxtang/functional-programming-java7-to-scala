@@ -12,6 +12,8 @@ public class StringReducer {
 
     public static void main(String[] args) {
         List<String> strings = asList("Bill", "Archer", "Lana");
+
+        System.out.println("------------ Java 7: StringReducer ------------");
         System.out.println(new StringReducer().reduceToFirstLetterOfLengthFourStrings(strings));
     }
 
