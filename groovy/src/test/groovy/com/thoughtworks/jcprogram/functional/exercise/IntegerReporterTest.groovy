@@ -1,12 +1,9 @@
 package com.thoughtworks.jcprogram.functional.exercise
 
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Test
 
-import static org.hamcrest.CoreMatchers.both
-import static org.hamcrest.CoreMatchers.containsString
-import static org.hamcrest.CoreMatchers.is
+import static org.hamcrest.CoreMatchers.*
 import static org.junit.Assert.assertThat
 
 class IntegerReporterTest {

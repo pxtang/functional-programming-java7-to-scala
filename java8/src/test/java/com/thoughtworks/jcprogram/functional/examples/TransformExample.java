@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class TransformExample {
 
     @Test
-    public void shouldDivideAllNumbers(){
+    public void shouldDivideAllNumbers() {
         Integer divisor = 3;
 
         List<Integer> someNumbers = asList(3, 6, 9);

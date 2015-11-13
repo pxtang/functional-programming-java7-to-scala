@@ -24,7 +24,7 @@ public class StringReducer {
 
         return strings.stream()
                 .filter(isLengthFourPredicate)
-                .map(str -> str.substring(0,1))
+                .map(str -> str.substring(0, 1))
                 .collect(Collectors.joining(""));
     }
 }

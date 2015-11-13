@@ -14,7 +14,7 @@ import static org.junit.Assert.assertThat;
 public class FilterExample {
 
     @Test
-    public void shouldRemoveOddElements(){
+    public void shouldRemoveOddElements() {
         Predicate<Integer> isEvenPredicate = number -> number % 2 == 0;
 
         List<Integer> numbersWithoutOdds = asList(1, 2, 3, 4)

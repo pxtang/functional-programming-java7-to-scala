@@ -3,7 +3,6 @@ package com.thoughtworks.jcprogram.functional.guava.examples;
 import com.google.common.base.Joiner;
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
