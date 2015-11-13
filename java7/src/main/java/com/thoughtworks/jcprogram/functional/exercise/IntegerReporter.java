@@ -18,7 +18,16 @@ public class IntegerReporter {
     }
 
     public String reportSquareRootsOfLargeNumbers(List<Integer> numbers) {
-        return "";
+        String output = "";
+        for (Integer number : numbers) {
+            if (number > 4) {
+                output += (int) Math.sqrt(number) + ", ";
+            }
+        }
+        if (numbers.size() > 1) {
+            output = output.substring(0, output.length() - 2);
+        }
+        return output;
     }
 
 }

@@ -1,6 +1,8 @@
 package com.thoughtworks.jcprogram.functional.exercise;
 
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
 
@@ -18,6 +20,11 @@ public class StringReducer {
     }
 
     public String reduceToFirstLetterOfLengthFourStrings(List<String> strings) {
-        return "";
+        Predicate<String> isLengthFourPredicate = str -> str.length() == 4;
+
+        return strings.stream()
+                .filter(isLengthFourPredicate)
+                .map(str -> str.substring(0,1))
+                .collect(Collectors.joining(""));
     }
 }

@@ -10,6 +10,6 @@ println("------------ Groovy: StringReducer ------------")
 println new StringReducer().reduceToFirstLetterOfLengthFourStrings(strings)
 
 
-def reduceToFirstLetterOfLengthFourStrings(strings){
-    ""
+def reduceToFirstLetterOfLengthFourStrings(strings) {
+    strings.findAll { it.length() == 4 }.collect { it.charAt(0) }.join("")
 }

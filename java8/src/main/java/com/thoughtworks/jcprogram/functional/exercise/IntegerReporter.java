@@ -1,6 +1,8 @@
 package com.thoughtworks.jcprogram.functional.exercise;
 
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
 
@@ -17,7 +19,12 @@ public class IntegerReporter {
     }
 
     public String reportSquareRootsOfLargeNumbers(List<Integer> numbers) {
-        return "";
+        Predicate<Integer> isLargerThanFourPredicate = num -> num > 4;
+        return numbers.stream()
+                .filter(isLargerThanFourPredicate)
+                .map(num -> ((int) Math.sqrt(num)))
+                .map(Object::toString)
+                .collect(Collectors.joining(", "));
     }
 
 }
