@@ -1,14 +1,29 @@
 package com.thoughtworks.jcprogram.functional.guava.exercise;
 
+import com.google.common.base.Function;
+import com.google.common.base.Joiner;
+import com.google.common.base.Predicate;
+
+import java.util.Collection;
 import java.util.List;
 
+import static com.google.common.collect.Collections2.filter;
 import static com.google.common.collect.Lists.newArrayList;
+import static com.google.common.collect.Collections2.transform;
 
 // Given a list of numbers like {1, 9, 4, 16, 4}
 // Print the square root of all of the numbers larger than 4.
 // For example, "3, 4"
 
 public class IntegerReporter {
+
+
+    private static class GreaterThanFourPredicate implements Predicate<Integer> {
+        public boolean apply(Integer integer) {
+            return integer > 4;
+        }
+    }
+
     public static void main(String[] args) {
         List<Integer> numbers = newArrayList(1, 9, 4, 16, 4);
 
@@ -16,8 +31,19 @@ public class IntegerReporter {
         System.out.println(new IntegerReporter().reportSquareRootsOfLargeNumbers(numbers));
     }
 
+    private static class SqrtFunction implements Function<Integer, Integer> {
+        @Override
+        public Integer apply(Integer integer) {
+            return (int) Math.sqrt(integer);
+        }
+    }
+
     public String reportSquareRootsOfLargeNumbers(List<Integer> numbers) {
-        return "";
+        Collection<Integer> greaterThanFour = filter(numbers, new GreaterThanFourPredicate());
+        Collection<Integer> rootedNumbers = transform(greaterThanFour, new SqrtFunction());
+
+        return Joiner.on(", ").join(rootedNumbers);
     }
 
 }
+
