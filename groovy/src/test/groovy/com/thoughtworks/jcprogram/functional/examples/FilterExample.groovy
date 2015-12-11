@@ -1,4 +1,4 @@
-package com.thoughtworks.jcprogram.functional.exercises
+package com.thoughtworks.jcprogram.functional.examples
 
 import org.junit.Test
 import static org.hamcrest.CoreMatchers.is
@@ -8,6 +8,7 @@ class FilterExample {
 
     @Test
     void shouldRemoveOddNumbers() {
-        assertThat([1, 2, 3, 4].findAll {it%2==0}, is([2, 4]))
+        def evenNumbers = [1, 2, 3, 4].findAll { it % 2 == 0 }
+        assertThat(evenNumbers, is([2, 4]))
     }
 }
