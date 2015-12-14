@@ -12,7 +12,8 @@ public class JoinerExample {
 
     @Test
     public void shouldJoinNumbers() {
-        String joined = asList(123, 456, 789).stream()
+        String joined = asList(123, 456, 789)
+                .stream()
                 .map(Object::toString)
                 .collect(Collectors.joining(","));
 
